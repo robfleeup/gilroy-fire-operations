@@ -1,47 +1,34 @@
-# Gilroy Fire Operations — Version 11
+# Gilroy Fire Operations Dashboard — Clean Rebuild
 
-## Current Operations
+This repository was rebuilt from a blank folder. Only verified department data and image assets were carried forward.
 
-The Current Operations panel now answers:
+## Deploy to Render
+1. Replace the contents of the GitHub repository with every file and folder in this package.
+2. Commit the replacement.
+3. In Render, choose **Manual Deploy → Clear build cache & deploy**.
+4. The health check is `/health`.
 
-**What is happening in Gilroy Fire right now?**
+## Editable data
+- Historical metrics and unit tiles: `data/historical.json`
+- Mutual aid: `aid_received_ytd` and `aid_given_ytd`
+- Deployments: `deployments` array
 
-It refreshes from the public incident source and displays:
+## Live sources
+The backend tries the public PulsePoint endpoint first and then the OurGilroy public incident feed as a fallback. Weather and alerts use the National Weather Service.
 
-- Active incidents
-- Incidents today
-- EMS incidents today
-- Fire and other incidents today
-- Gilroy units currently committed
-- Chief Officers currently committed
-- ALS ambulances currently assigned
-- BLS ambulances currently assigned
-- Longest active incident
-- Last update time
+## Interactive 2025 Annual Report
 
-## Top tile
+The dashboard now includes a dedicated annual report viewer at:
 
-The former reporting-date tile is now:
+```text
+/annual-report
+```
 
-**Incidents Today — Live public incident count**
+Features include all 28 report slides, chapter navigation, full-screen viewing, keyboard controls, touch swiping, mouse-wheel navigation, and a printable PDF. The viewer deliberately displays exported PowerPoint page 2 first because that page is the designed cover; the original deck stores the Chapter 01 divider as page 1.
 
-## Definitions
+Annual report assets are located in:
 
-Gilroy committed units are limited to:
-
-- E47
-- E48
-- E49
-- E50
-- RM49
-- E650
-- T47
-- B47
-- B48
-- B49
-- B50
-
-ALS ambulances are identified by `M` followed by a number.  
-BLS ambulances are identified by `A` followed by a number.
-
-The dashboard displays only information available in the public source and does not infer missing units.
+```text
+static/annual-report/slides/
+static/reports/
+```
