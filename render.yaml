@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: gilroy-fire-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 60
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: PULSEPOINT_AGENCY_ID
+        value: "43010"
+      - key: DASHBOARD_DB
+        value: /tmp/gilroy_fire.db
+      - key: OURGILROY_API
+        value: https://ourgilroy.com/api/fire.php
+      - key: SYNC_MIN_SECONDS
+        value: "180"
+    healthCheckPath: /health
