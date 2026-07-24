@@ -1,2 +1,257 @@
-:root{--navy:#142033;--red:#bd302a;--cream:#f4f1ea;--white:#fff;--line:#dce2e8;--muted:#6d7a8d;--shadow:0 18px 50px rgba(20,32,51,.12)}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--navy)}.top{height:96px;padding:10px 5vw;background:#fff;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;gap:16px;align-items:center}.brand img{width:78px;height:72px;object-fit:contain}.brand strong,.brand span{display:block}.brand strong{font-size:24px}.brand span{color:var(--muted);margin-top:4px}.clock{text-align:right}.clock b,.clock span{display:block}.clock b{font-size:25px}.clock span{color:var(--muted);font-size:12px;margin-top:4px}nav{height:56px;background:var(--navy);padding:0 5vw;display:flex;align-items:center;gap:38px;position:sticky;top:0;z-index:20}nav a{color:#eef2f6;text-decoration:none;font-weight:800}main{max-width:1560px;margin:auto;padding:26px 4vw 70px}.hero{height:500px;position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}.hero-image{position:absolute;inset:0;background:url('../images/hero-1.jpg') center/cover}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,28,.9),rgba(8,16,28,.36))}.hero-copy{position:absolute;left:6%;top:50%;transform:translateY(-50%);color:#fff;max-width:720px}.hero-copy span,label{font-size:11px;font-weight:950;letter-spacing:.14em;color:var(--red)}.hero-copy span{color:#f6bbb7}.hero-copy h1{font-size:56px;line-height:1.03;margin:13px 0}.hero-copy p{font-size:18px;color:#e2e8ef}.online{position:absolute;right:24px;bottom:22px;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.24);padding:12px 16px;border-radius:999px;font-weight:800}.online i{display:inline-block;width:9px;height:9px;background:#35dc7d;border-radius:50%;margin-right:8px}.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin:-38px 22px 38px;position:relative;z-index:3}.kpi{background:#fff;border-radius:18px;padding:20px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.8)}.kpi span{font-size:10px;color:var(--red);font-weight:950;letter-spacing:.1em}.kpi strong{display:block;font-size:31px;margin:10px 0 5px}.kpi small{color:var(--muted)}.three{display:grid;grid-template-columns:1fr .82fr 1.08fr;gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}.weather{display:flex;gap:25px;align-items:center;margin:30px 0}.weather>strong{font-size:64px}.weather h2,.weather p{margin:0}.weather p,.muted{color:var(--muted)}.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mini div,.ops div{background:#f2f5f8;border-radius:13px;padding:14px}.mini span,.ops span,.ops-foot span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.07em}.mini b{display:block;margin-top:8px}.alert-icon{width:58px;height:58px;border-radius:50%;background:#e4f6eb;color:#229253;display:grid;place-items:center;font-size:32px;margin:30px 0}.ops{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.ops strong{font-size:28px}.ops-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--line);margin-top:15px;padding-top:15px}.ops-foot b{display:block;margin-top:5px}.section{margin-top:58px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}.section-head h2{font-size:34px;margin:7px 0 0}.section-head>span{color:var(--muted);font-size:12px}.units{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.unit{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:var(--shadow)}.unit-head{display:flex;justify-content:space-between}.unit-head b{font-size:24px;color:var(--red)}.unit-head span{font-size:11px;color:var(--muted)}.periods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.periods div{background:#f3f5f7;border-radius:10px;padding:10px;text-align:center}.periods strong{display:block;font-size:23px}.periods small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;margin-top:5px}.aid .periods{grid-template-columns:1fr 1fr}.aid p{font-size:10px;color:var(--muted);line-height:1.45}.button{background:var(--red);color:#fff;text-decoration:none;padding:10px 14px;border-radius:999px;font-weight:800;font-size:12px}.feed{padding:0;overflow:hidden}.feed-row{display:grid;grid-template-columns:1.3fr 1.8fr 1fr 100px;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:center}.feed-row:last-child{border-bottom:0}.feed-row span{color:var(--muted);font-size:11px}.pill{background:#edf1f5;padding:7px 9px;border-radius:999px;text-align:center;font-size:10px;font-weight:800}.performance{display:grid;grid-template-columns:1.4fr .75fr 1fr;gap:18px}.bars .bar{margin:14px 0}.bar-top{display:flex;justify-content:space-between;font-size:12px}.track{height:9px;background:#e9edf1;border-radius:99px;margin-top:7px;overflow:hidden}.track i{display:block;height:100%;background:var(--red)}.center{text-align:center}.donut{--pct:70;width:220px;height:220px;border-radius:50%;margin:28px auto;background:conic-gradient(var(--red) calc(var(--pct)*1%),#e7ebef 0);display:grid;place-items:center}.donut:before{content:'';position:absolute;width:145px;height:145px;background:#fff;border-radius:50%}.donut{position:relative}.donut div{position:relative}.donut strong{display:block;font-size:43px}.donut span{color:var(--muted)}.rank{display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}.rank b:first-child{width:27px;height:27px;border-radius:8px;background:#edf1f5;display:grid;place-items:center}.rank div{flex:1}.rank span{display:block;color:var(--muted);font-size:11px;margin-top:3px}.community{display:flex;gap:22px;align-items:center;background:#e8e2d8;border-radius:20px;padding:28px;margin-top:55px}.community img{width:85px;height:80px;object-fit:contain}.community h2,.community p{margin:0}.community p{margin-top:7px;color:#526071;line-height:1.5}footer{text-align:center;background:var(--navy);color:#fff;padding:28px}@media(max-width:1150px){.kpis{grid-template-columns:repeat(3,1fr)}.three{grid-template-columns:1fr 1fr}.three article:last-child{grid-column:1/-1}.units{grid-template-columns:repeat(3,1fr)}.performance{grid-template-columns:1fr 1fr}.performance article:last-child{grid-column:1/-1}}@media(max-width:760px){.clock{display:none}.brand strong{font-size:18px}nav{overflow:auto}.hero{height:500px}.hero-copy{left:8%;right:8%}.hero-copy h1{font-size:40px}.kpis{grid-template-columns:1fr 1fr;margin:-25px 8px 30px}.three,.performance{grid-template-columns:1fr}.three article:last-child,.performance article:last-child{grid-column:auto}.units{grid-template-columns:1fr}.ops{grid-template-columns:1fr 1fr}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.feed-row{grid-template-columns:1fr 1fr}.feed-row>*:nth-child(n+3){grid-column:2}.mini{grid-template-columns:1fr 1fr}}
-.annual-nav{background:#8f1823;padding:9px 14px;border-radius:999px}.annual-feature{margin-top:58px;background:#0b1f33;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.12fr .88fr;min-height:360px;box-shadow:var(--shadow)}.annual-feature-image{background:#071523;display:grid;place-items:center;padding:24px}.annual-feature-image img{width:100%;height:100%;max-height:390px;object-fit:contain;box-shadow:0 18px 50px rgba(0,0,0,.35)}.annual-feature-copy{padding:54px;color:#fff;display:flex;flex-direction:column;justify-content:center}.annual-feature-copy label{color:#d2a443}.annual-feature-copy h2{font-size:42px;line-height:1.05;margin:12px 0}.annual-feature-copy p{color:#c4cfda;line-height:1.65;max-width:600px}.annual-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}.annual-primary,.annual-secondary{padding:13px 17px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:900}.annual-primary{background:#8f1823;color:#fff}.annual-secondary{border:1px solid rgba(255,255,255,.35);color:#fff}@media(max-width:900px){.annual-feature{grid-template-columns:1fr}.annual-feature-copy{padding:34px}.annual-feature-copy h2{font-size:34px}}@media(max-width:760px){.annual-nav{white-space:nowrap}.annual-feature-image{padding:12px}.annual-feature-copy{padding:28px 22px}.annual-feature-copy h2{font-size:30px}}
+{
+  "as_of": "2026-07-15T19:08:23",
+  "year": 2026,
+  "total_incidents": 3494,
+  "incidents_today": 12,
+  "incidents_month": 293,
+  "average_daily": 17.8,
+  "medical_count": 2592,
+  "medical_percent": 74.2,
+  "authorized_reports": 3424,
+  "authorized_percent": 98.0,
+  "first_arriving": {
+    "E47": {
+      "today": 4,
+      "month": 81,
+      "ytd": 979
+    },
+    "E48": {
+      "today": 3,
+      "month": 88,
+      "ytd": 1130
+    },
+    "E49": {
+      "today": 2,
+      "month": 40,
+      "ytd": 504
+    },
+    "E50": {
+      "today": 0,
+      "month": 7,
+      "ytd": 109
+    },
+    "RM49": {
+      "today": 0,
+      "month": 22,
+      "ytd": 165
+    },
+    "E650": {
+      "today": 0,
+      "month": 1,
+      "ytd": 25
+    },
+    "T47": {
+      "today": 0,
+      "month": 0,
+      "ytd": 45
+    },
+    "B47": {
+      "today": 0,
+      "month": 3,
+      "ytd": 16
+    },
+    "B48": {
+      "today": 0,
+      "month": 3,
+      "ytd": 16
+    },
+    "B49": {
+      "today": 0,
+      "month": 0,
+      "ytd": 5
+    },
+    "B50": {
+      "today": 0,
+      "month": 0,
+      "ytd": 1
+    }
+  },
+  "unit_responses_ytd": {
+    "B47": 89,
+    "B48": 85,
+    "B49": 61,
+    "B50": 6,
+    "E47": 1345,
+    "E48": 1463,
+    "E49": 802,
+    "E50": 181,
+    "E650": 58,
+    "RM49": 283,
+    "T47": 75
+  },
+  "unit_responses_total": 4448,
+  "monthly": [
+    {
+      "month": "2026-01",
+      "count": 511
+    },
+    {
+      "month": "2026-02",
+      "count": 531
+    },
+    {
+      "month": "2026-03",
+      "count": 516
+    },
+    {
+      "month": "2026-04",
+      "count": 541
+    },
+    {
+      "month": "2026-05",
+      "count": 548
+    },
+    {
+      "month": "2026-06",
+      "count": 554
+    },
+    {
+      "month": "2026-07",
+      "count": 293
+    }
+  ],
+  "hourly": [
+    {
+      "hour": 0,
+      "count": 114
+    },
+    {
+      "hour": 1,
+      "count": 96
+    },
+    {
+      "hour": 2,
+      "count": 84
+    },
+    {
+      "hour": 3,
+      "count": 74
+    },
+    {
+      "hour": 4,
+      "count": 66
+    },
+    {
+      "hour": 5,
+      "count": 68
+    },
+    {
+      "hour": 6,
+      "count": 81
+    },
+    {
+      "hour": 7,
+      "count": 100
+    },
+    {
+      "hour": 8,
+      "count": 143
+    },
+    {
+      "hour": 9,
+      "count": 157
+    },
+    {
+      "hour": 10,
+      "count": 197
+    },
+    {
+      "hour": 11,
+      "count": 183
+    },
+    {
+      "hour": 12,
+      "count": 193
+    },
+    {
+      "hour": 13,
+      "count": 175
+    },
+    {
+      "hour": 14,
+      "count": 182
+    },
+    {
+      "hour": 15,
+      "count": 171
+    },
+    {
+      "hour": 16,
+      "count": 193
+    },
+    {
+      "hour": 17,
+      "count": 194
+    },
+    {
+      "hour": 18,
+      "count": 184
+    },
+    {
+      "hour": 19,
+      "count": 217
+    },
+    {
+      "hour": 20,
+      "count": 174
+    },
+    {
+      "hour": 21,
+      "count": 175
+    },
+    {
+      "hour": 22,
+      "count": 144
+    },
+    {
+      "hour": 23,
+      "count": 129
+    }
+  ],
+  "top_types": [
+    {
+      "type": "Medical Event",
+      "count": 2387
+    },
+    {
+      "type": "PUBLIC SERVICE LIFT ASSIST",
+      "count": 117
+    },
+    {
+      "type": "ALARM - SMOKE DETECTOR",
+      "count": 92
+    },
+    {
+      "type": "GENERAL FIRE ALARM",
+      "count": 89
+    },
+    {
+      "type": "AUTO AID MEDICAL AID",
+      "count": 88
+    },
+    {
+      "type": "AUTO AID VEHICLE ACCIDENT",
+      "count": 76
+    },
+    {
+      "type": "SMOKE INVEST",
+      "count": 74
+    },
+    {
+      "type": "VEHICLE ACCIDENT WITH INJURIES",
+      "count": 62
+    },
+    {
+      "type": "VEHICLE ACCIDENT WITH MINOR INJURIES",
+      "count": 49
+    },
+    {
+      "type": "VEGETATION FIRE",
+      "count": 46
+    }
+  ],
+  "aid_received_ytd": 135,
+  "aid_given_ytd": null,
+  "aid_note": "Aid received is verified from the YTD apparatus report. Aid given requires incident-jurisdiction data.",
+  "deployments": []
+}
