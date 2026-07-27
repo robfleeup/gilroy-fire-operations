@@ -1,34 +1,48 @@
-# Gilroy Fire Operations Dashboard — Clean Rebuild
+# Gilroy Fire Performance & Operations Center
 
-This repository was rebuilt from a blank folder. Only verified department data and image assets were carried forward.
+A public-facing Gilroy Fire Department site with independent sections for:
 
-## Deploy to Render
-1. Replace the contents of the GitHub repository with every file and folder in this package.
-2. Commit the replacement.
-3. In Render, choose **Manual Deploy → Clear build cache & deploy**.
-4. The health check is `/health`.
+- 2025 performance dashboard
+- Current public incidents
+- 2025 incident heat map
+- About GFD
+- 2025 annual performance report
 
-## Editable data
-- Historical metrics and unit tiles: `data/historical.json`
-- Mutual aid: `aid_received_ytd` and `aid_given_ytd`
-- Deployments: `deployments` array
+The live incident feed is isolated from the annual and static content. A live-feed failure does not take down the rest of the site.
 
-## Live sources
-The backend tries the public PulsePoint endpoint first and then the OurGilroy public incident feed as a fallback. Weather and alerts use the National Weather Service.
+## Run locally
 
-## Interactive 2025 Annual Report
-
-The dashboard now includes a dedicated annual report viewer at:
-
-```text
-/annual-report
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
 ```
 
-Features include all 28 report slides, chapter navigation, full-screen viewing, keyboard controls, touch swiping, mouse-wheel navigation, and a printable PDF. The viewer deliberately displays exported PowerPoint page 2 first because that page is the designed cover; the original deck stores the Chapter 01 divider as page 1.
+Open `http://localhost:10000`.
 
-Annual report assets are located in:
+## Update annual dashboard data
+
+Replace `static/data/summary.json` while preserving the existing field names and structure.
+
+## Update the annual report
+
+Replace `static/Gilroy-Fire-2025-Annual-Performance-Report.pdf`. Update the displayed year in the templates when a new report is published.
+
+## Update images
+
+Replace files in `static/images/` while preserving filenames, or update the matching image paths in the templates.
+
+## Live incident feed
+
+Set these environment variables in Render:
 
 ```text
-static/annual-report/slides/
-static/reports/
+PULSEPOINT_URL=https://ourgilroy.com/api/fire.php?view=incidents
+FALLBACK_URL=https://api.pulsepoint.org/v1/webapp?resource=incidents&agencyid=43010
 ```
+
+## Deployment
+
+See `DEPLOY_TO_GITHUB.md` for the safe replacement process using the existing repository.

@@ -1,0 +1,25 @@
+
+const fmt=n=>Number(n||0).toLocaleString();
+async function loadSummary(){
+  const k=document.getElementById('kpis'); if(!k) return;
+  try{
+    const d=await fetch('/static/data/summary.json').then(r=>r.json());
+    const values=[['Incidents',fmt(d.incidents),'Calendar year '+d.year],['Unit Responses',fmt(d.unit_responses),'Department apparatus responses'],['EMS Incidents',fmt(d.ems_incidents),d.ems_share+'% of incidents'],['Average Daily Incidents',Number(d.average_daily).toFixed(1),'Annual daily average']];
+    k.innerHTML=values.map(x=>`<article class="card metric"><span>${x[0]}</span><strong>${x[1]}</strong><small>${x[2]}</small></article>`).join('');
+    const demand=document.getElementById('demand'); if(demand){demand.innerHTML=d.demand_mix.map(x=>`<div class="bar-row"><span>${x.name}</span><div class="track"><div class="fill" style="width:${x.share}%"></div></div><b>${x.share.toFixed(1)}%</b></div>`).join('')}
+    const avg=document.getElementById('avg-response'); if(avg) avg.textContent=d.response_time.average;
+    const p90=document.getElementById('p90-response'); if(p90) p90.textContent=d.response_time.p90;
+    const units=document.getElementById('unit-times'); if(units) units.innerHTML=d.unit_response_times.map(x=>`<tr><td><b>${x.unit}</b></td><td>${x.average}</td></tr>`).join('');
+  }catch(e){k.innerHTML='<div class="notice">Performance data could not be loaded.</div>'}
+}
+async function loadLive(){
+  const box=document.getElementById('live-kpis'); if(!box) return;
+  const status=document.getElementById('live-status'), feed=document.getElementById('feed');
+  try{
+    const d=await fetch('/api/live').then(r=>r.json());
+    box.innerHTML=[['Active Incidents',d.active_incidents],['Incidents Today',d.incidents_today],['EMS Today',d.ems_today],['GFD Units Committed',d.gilroy_units_committed]].map(x=>`<article class="card metric"><span>${x[0]}</span><strong>${fmt(x[1])}</strong><small>${d.source||'Public feed'}</small></article>`).join('');
+    status.textContent=d.available?'Feed available':'Feed unavailable'; status.style.background=d.available?'#e8f3ec':'#fff0f0'; status.style.color=d.available?'#17613a':'#8a2330';
+    feed.innerHTML=d.recent?.length?d.recent.map(x=>`<div class="feed-row"><div><b>${x.type}</b><br><small>${x.received_at?new Date(x.received_at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):''}</small></div><div>${x.address}</div><div>${(x.units||[]).join(', ')||'No public unit listing'}</div><span class="status">${x.is_active?'Active':'Recent'}</span></div>`).join(''):`<p class="muted">No public incidents are currently available. The rest of the site remains operational.</p>`;
+  }catch(e){status.textContent='Feed unavailable';box.innerHTML='<div class="notice">Current incident information is temporarily unavailable. Annual performance data remains available.</div>';feed.innerHTML=''}
+}
+loadSummary();loadLive();if(document.getElementById('live-kpis')) setInterval(loadLive,60000);
